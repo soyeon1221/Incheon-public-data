@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Incheon-public-data/static/css/main.fd18c494.css",
+    "main.js": "/Incheon-public-data/static/js/main.89345e1f.js",
+    "static/js/787.1fac12c9.chunk.js": "/Incheon-public-data/static/js/787.1fac12c9.chunk.js",
+    "static/media/logo.svg": "/Incheon-public-data/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Incheon-public-data/index.html",
+    "main.fd18c494.css.map": "/Incheon-public-data/static/css/main.fd18c494.css.map",
+    "main.89345e1f.js.map": "/Incheon-public-data/static/js/main.89345e1f.js.map",
+    "787.1fac12c9.chunk.js.map": "/Incheon-public-data/static/js/787.1fac12c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd18c494.css",
+    "static/js/main.89345e1f.js"
+  ]
+}

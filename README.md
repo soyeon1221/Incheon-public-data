@@ -42,4 +42,4 @@ App을 통해 지역과 년도별로 인천광역시 어린이사고 통계를 �
 
 ## &#128310; Incheon Public Data App 바로가기
 
-[<img src="./public/public_data_logo.ico" width="40" height="40">](https://soyeon1221.github.io/Todo-App) 
+[<img src="./public/public_data_logo.ico" width="40" height="40">](https://soyeon1221.github.io/Incheon-public-data) 

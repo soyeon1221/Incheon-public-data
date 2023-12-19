@@ -44,7 +44,7 @@ Tailwind CSS를 사용하여 디자인하였습니다.
 
 ## &#128310; Incheon Public Data App 바로가기
 
-[<img src="./public/public_data_logo.ico" width="40" height="40">](https://soyeon1221.github.io/Incheon-public-data) 
+[<img src="./public/public_data_logo.ico" width="40" height="40">](https://soyeon1221.github.io/Incheon-public-data) 아이콘 클릭!
 <br>
 ![인천광역시](https://github.com/soyeon1221/Incheon-public-data/assets/121142418/ec842e48-c597-458b-b3a3-9593aa9b023f)
 

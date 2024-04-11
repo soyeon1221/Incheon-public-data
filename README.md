@@ -9,6 +9,7 @@
 ###### 3. [기술 스택 및 라이브러리](#-기술-스택-및-라이브러리)
 ###### 4. [개발 기간](#-개발-기간)
 ###### 5. [주요 기능](#-주요-기능)
+###### 6. [느낀점](#-느낀점)
 
 <br>
 
@@ -56,16 +57,20 @@ Tailwind CSS를 사용하여 디자인하였습니다.
 - 공공데이터포털 API를 활용하여 제작하였습니다.
 
 
-### 2. 
+### 2. 목록
 <img src="https://github.com/soyeon1221/Incheon-public-data/assets/121142418/a8c35536-4563-40d3-8acd-91610437c194" width="700px" height="348px">
 
-- 
+- select태그를 사용해서 드롭다운 목록을 구현하였습니다.
+- 해당 년도와 지역을 선택하면 해당 내용이 차트와 지도에 나타나도록 구현하였습니다.
 
 
 ### 3. 차트
 <img src="https://github.com/soyeon1221/Incheon-public-data/assets/121142418/77843960-dd53-4d7c-95c3-be5f60f4104b" width="700px" height="348px">
 
-- 다양한 어린이 사고 종류에 대한 사고 건수를 한눈에 파악할 수 있습니다.
+- Recharts 라이브러리를 사용하여 구현하였습니다.
+- 어린이 사고 종류에 대한 사고 건수를 막대차트로 한눈에 파악할 수 있습니다.
+- 차트를 호버하면 사고 종류에 대한 사고 건수를 숫자로 파악할 수 있습니다.
+- 원하는 항목만 차트로 표현하기 위해 map과 filter 메서드를 사용하였습니다.
 
 
 ### 4. 지도
@@ -76,7 +81,49 @@ Tailwind CSS를 사용하여 디자인하였습니다.
 
 
 ### 5. 모바일
-<img src="https://github.com/soyeon1221/Incheon-public-data/assets/121142418/1ff783c0-b7a0-4bbb-99d1-c3b9e6cb693f" width="700px" height="603px">
+<img src="https://github.com/soyeon1221/Incheon-public-data/assets/121142418/1ff783c0-b7a0-4bbb-99d1-c3b9e6cb693f" width="650px" height="553px">
 
-- 반응형으로 디자인으로 제작되어 모바일 기기에서도 편리하게 사용할 수 있습니다.
+- 반응형으로 제작되어 모바일 기기에서도 편리하게 사용할 수 있도록 구현하였습니다.
 
+<br>
+
+
+## &#128310; 느낀점
+
+#### [배운점]
+###### 1. Tailwind CSS
+- 다운로드 방법 : npm install tailwindcss (package.json 파일에서 확인)
+- 파일 생성 방법 : npx tailwindcss init (tailwind.config.js 파일 생성)
+- tailwind.config.js 파일에 작성
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.js"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+- src 폴더 / index.css 파일에 작성
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #eee;
+}
+```
+###### 2. Kakao Developers
+- public 폴더 / index.html 파일에 작성
+```
+<script
+    type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c6b4f71d0117fa91c6591138e86fb430&libraries=services,clusterer"
+    ></script>
+```
+- npm install react-kakao-maps-sdk
+- npm install kakao.map.d.ts --save-dev

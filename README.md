@@ -5,6 +5,13 @@
 <br>
 
 
+## &#128310; Incheon Public Data App 바로가기
+
+[<img src="./public/public_data_logo.ico" width="40" height="40">](https://soyeon1221.github.io/Incheon-public-data) 아이콘 클릭!
+
+<br>
+
+
 ## &#128310; 프로젝트 소개
 
 App을 통해 지역과 년도별로 인천광역시 어린이사고 통계를 조회할 수 있습니다. 

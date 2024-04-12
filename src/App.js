@@ -31,7 +31,7 @@ const years = [2018, 2019, 2020, 2021];
 // 서버에 데이터를 요청하는 함수
 function fetchData(guGuns, year){
   const endPoint = 'https://apis.data.go.kr/B552061/lgStat/getRestLgStat'
-  const serviceKey = process.env.REACT_APP_KAKAOMAP_KEY;
+  const serviceKey = process.env.REACT_APP_API_KEY;
   const type = 'json';
   const numOfRows = 10;
   const pageNo = 1;

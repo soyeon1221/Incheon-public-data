@@ -119,7 +119,7 @@ body {
 }
 ```
 ##### 2. Kakao Developers
-- Kakao map API 불러오기 (public 폴더 / index.html 파일에 작성)
+- Kakao map API 불러오기 (public 폴더 / index.html 파일에 작성)<br>
   인증키 안에 본인 JavaScript 키 코드 넣기
 ```
 <script 
@@ -128,4 +128,33 @@ body {
 >
 </script>
 ```
+- html파일에서 앱키를 사용할 땐 % %를 사용해야 한다.
+```
+<script 
+  type="text/javascript"
+  src="//dapi.kakao.com/v2/maps/sdk.js?appkey=%REACT_APP_변수명%"
+>
+</script>
+```
 - 다운로드 방법 : npm install react-kakao-maps-sdk
+##### 3. 인증키
+- Web, App 개발을 하다보면 API_KEY, 포트번호 등 외부에 공개되면 안되는 값들이 있다.(git 등의 오픈소스에 올리면 안되는 값)<br>
+  이 때 필요한 것이 dotenv 패키지이고, 환경변수 파일을 외부에 만들어 API_KEY 등을 저장시켜 소스코드 내에 하드코딩하지 않고 사용할 수 있다.<br>
+  .env 파일은 프로젝트의 최상위 루트에 위치하여야 한다.
+1. 다운로드 방법 : npm i dotenv
+2. dotenv 라이브러리 다운로드 방법 : npm install dotenv  
+3. .gitignore 파일에 .env 파일 숨기기
+```
+# key
+.env
+```
+4. .env 파일에 key 작성
+- React에서는 반드시 변수명을 REACT_APP으로 시작해야 한다.
+```
+REACT_APP_변수명 = "자신의 API KEY 작성"
+```
+5. 요청을 할 파일에 key 입력하기
+- key 작성하는 부분을 process.env.REACT_APP_변수명 으로 작성하면 key가 숨겨진다.
+```
+const serviceKey = process.env.REACT_APP_API_KEY;
+```

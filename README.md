@@ -91,8 +91,8 @@ Tailwind CSS를 사용하여 디자인하였습니다.
 
 ## &#128310; 느낀점
 
-#### [배운점]
-##### 1. Tailwind CSS
+### [배운점]
+#### 1. Tailwind CSS
 - 다운로드 방법 : npm install tailwindcss (package.json 파일에서 확인)
 - 파일 생성 방법 : npx tailwindcss init (tailwind.config.js 파일 생성)
 - tailwind.config.js 파일에 작성
@@ -118,7 +118,7 @@ body {
   background-color: #eee;
 }
 ```
-##### 2. Kakao Developers
+#### 2. Kakao Developers
 - Kakao map API 불러오기 (public 폴더 / index.html 파일에 작성)<br>
   인증키 안에 본인 JavaScript 키 코드 넣기
 ```
@@ -137,7 +137,7 @@ body {
 </script>
 ```
 - 다운로드 방법 : npm install react-kakao-maps-sdk
-##### 3. 인증키
+#### 3. 인증키
 - Web, App 개발을 하다보면 API_KEY, 포트번호 등 외부에 공개되면 안되는 값들이 있다.(git 등의 오픈소스에 올리면 안되는 값)<br>
   이 때 필요한 것이 dotenv 패키지이고, 환경변수 파일을 외부에 만들어 API_KEY 등을 저장시켜 소스코드 내에 하드코딩하지 않고 사용할 수 있다.<br>
   .env 파일은 프로젝트의 최상위 루트에 위치하여야 한다.

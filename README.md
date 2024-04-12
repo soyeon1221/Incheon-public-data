@@ -144,6 +144,7 @@ body {
 1. 다운로드 방법 : npm i dotenv
 2. dotenv 라이브러리 다운로드 방법 : npm install dotenv  
 3. .gitignore 파일에 .env 파일 숨기기
+- .gitignore파일이란 Git 버전 관리에서 제외할 파일 목록을 지정하는 파일이다.
 ```
 # key
 .env

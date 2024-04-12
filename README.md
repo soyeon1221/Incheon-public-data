@@ -23,7 +23,7 @@
 
 ## &#128310; 프로젝트 소개
 
-App을 통해 지역과 년도별로 인천광역시 어린이사고 통계를 조회할 수 있습니다. 
+App을 통해 지역과 연도별로 인천광역시 어린이사고 통계를 조회할 수 있습니다. 
 
 Tailwind CSS를 사용하여 디자인하였습니다.
 
@@ -54,14 +54,15 @@ Tailwind CSS를 사용하여 디자인하였습니다.
 ### 1. 메인
 <img src="https://github.com/soyeon1221/Incheon-public-data/assets/121142418/bf6f1310-d1a0-422e-947a-4350457a2a9c" width="700px" height="348px">
 
-- 공공데이터포털 API를 활용하여 제작하였습니다.
+- 공공데이터 포털 API를 활용하여 제작하였습니다.
+- 연도와 지역별로 지도, 막대차트를 확인할 수 있도록 구현하였습니다.
 
 
 ### 2. 목록
 <img src="https://github.com/soyeon1221/Incheon-public-data/assets/121142418/a8c35536-4563-40d3-8acd-91610437c194" width="700px" height="348px">
 
-- select태그를 사용해서 드롭다운 목록을 구현하였습니다.
-- 해당 년도와 지역을 선택하면 해당 내용이 차트와 지도에 나타나도록 구현하였습니다.
+- select 태그를 사용해서 드롭다운 목록을 구현하였습니다.
+- 해당 연도와 지역을 선택하면 해당 내용이 차트와 지도에 나타나도록 구현하였습니다.
 
 
 ### 3. 차트
@@ -76,8 +77,8 @@ Tailwind CSS를 사용하여 디자인하였습니다.
 ### 4. 지도
 <img src="https://github.com/soyeon1221/Incheon-public-data/assets/121142418/9e983dfd-56fb-4478-af9c-6757189c7058" width="700px" height="348px">
 
-- kakao map API 를 활용한 위치정보 컴포넌트 구현하였습니다.
-- 지도에서 특정 지역을 선택하면 해당 지역의 어린이 사고 통계를 차트로 시각화하여 확일할 수 있습니다.
+- kakao map API를 활용한 위치정보 컴포넌트 구현하였습니다.
+- 지도에서 특정 지역을 선택하면 해당 지역의 어린이 사고 통계를 차트로 시각화하여 확인할 수 있습니다.
 
 
 ### 5. 모바일
@@ -91,7 +92,7 @@ Tailwind CSS를 사용하여 디자인하였습니다.
 ## &#128310; 느낀점
 
 #### [배운점]
-###### 1. Tailwind CSS
+##### 1. Tailwind CSS
 - 다운로드 방법 : npm install tailwindcss (package.json 파일에서 확인)
 - 파일 생성 방법 : npx tailwindcss init (tailwind.config.js 파일 생성)
 - tailwind.config.js 파일에 작성
@@ -117,13 +118,15 @@ body {
   background-color: #eee;
 }
 ```
-###### 2. Kakao Developers
-- public 폴더 / index.html 파일에 작성
+##### 2. Kakao Developers
+- Kakao map API 불러오기 (public 폴더 / index.html 파일에 작성)
+  인증키 안에 본인 JavaScript 키 코드 넣기
 ```
-<script
-    type="text/javascript"
-    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c6b4f71d0117fa91c6591138e86fb430&libraries=services,clusterer"
-    ></script>
+<script 
+  type="text/javascript"
+  src="https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=인증키"
+>
+</script>
 ```
-- npm install react-kakao-maps-sdk
+- 다운로드 방법 : npm install react-kakao-maps-sdk
 - npm install kakao.map.d.ts --save-dev

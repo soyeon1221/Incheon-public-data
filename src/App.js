@@ -31,7 +31,7 @@ const years = [2018, 2019, 2020, 2021];
 // 서버에 데이터를 요청하는 함수
 function fetchData(guGuns, year){
   const endPoint = 'https://apis.data.go.kr/B552061/lgStat/getRestLgStat'
-  const serviceKey = 'R6ebLrer5O%2BcT1LE4rnaa4mpAQyQ%2F2Fu5DmoDKKbevTv%2FmJyKxQfO2DH0e8D3MJvRzj5rVSACjnkZ8HKab0R3g%3D%3D'
+  const serviceKey = process.env.REACT_APP_KAKAOMAP_KEY;
   const type = 'json';
   const numOfRows = 10;
   const pageNo = 1;
@@ -40,12 +40,12 @@ function fetchData(guGuns, year){
   console.log('군코드: '+ guGuns.guGun);
 
   const promise = fetch(`${endPoint}?serviceKey=${serviceKey}&searchYearCd=${year}&siDo=${siDo}&guGun=${guGuns.guGun}&type=${type}&numOfRows=${numOfRows}&pageNo=${pageNo}`)
-  .then(res => {
-    if (!res.ok) { 
-      throw res;
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('API 요청 실패: ' + response.status);
     }
-    return res.json();
-  })
+    return response.json();
+  });
 
   return promise; 
 }
@@ -58,7 +58,6 @@ export default function App() {
       id:"0",
       title: "강화군",
       latlng: { lat: 37.7474156763281, lng: 126.48812680588904 },
-     
     },
     {
       id:"1",
@@ -104,7 +103,6 @@ export default function App() {
       id:"9",
       title: "중구",
       latlng: { lat: 37.471318238628406, lng: 126.48425025563662 },
-     
     }
   ];
 
@@ -151,7 +149,6 @@ export default function App() {
                 <option 
                   key={pooint.id} 
                   value={pooint.id} 
-                  selected={gugun.name==pooint.title}
                   className=" text-center "
                 >
                   {pooint.title}
@@ -215,21 +212,27 @@ function Dashboard({guGun, year}){
   const [ error,setError ] = useState(null);
 
   useEffect(()=>{
-    //서버에 요청하기 전 사용자에게 대기 상태를 먼저 보여주어야 한다
-    setIsLoaded(false);
-    setError(null);
+    try {
+      console.log("Dachboard useEffect 실행됨")
+      //서버에 요청하기 전 사용자에게 대기 상태를 먼저 보여주어야 한다
+      setIsLoaded(false);
+      setError(null);
 
-    //fethData 함수에 guGun 과 year 변수를 전달한다
-    fetchData(guGun, year)
-      .then(data=>{
-        setData(data);
-        console.log(data)
-      })
-      .catch(error =>{
-        setError(error);
-      })
-      .finally(()=> setIsLoaded(true)); //성공 실패와 관계없이 서버가 응답하면 대기상태를 해제한다    
-
+      //fethData 함수에 guGun 과 year 변수를 전달한다
+      fetchData(guGun, year)
+        .then(data=>{
+          setData(data);
+          console.log("데이터 받아옴:", data)
+        })
+        .catch(error =>{
+          setError(error);
+        })
+        .finally(()=> setIsLoaded(true)); //성공 실패와 관계없이 서버가 응답하면 대기상태를 해제한다    
+    } catch (error) {
+      console.error("Error in Dachboard useEffect:", error);
+      setError(error) // 에러 상태 업데이트
+      setIsLoaded(true); // 로딩 상태 업데이트
+    }
   },[guGun,year]) //guGun 또는 year 변수가 업데이트되면 서버에 다시데이터를 요청한다.
 
   if(error){

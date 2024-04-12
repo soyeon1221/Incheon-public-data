@@ -129,4 +129,3 @@ body {
 </script>
 ```
 - 다운로드 방법 : npm install react-kakao-maps-sdk
-- npm install kakao.map.d.ts --save-dev
